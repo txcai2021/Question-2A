@@ -33,12 +33,12 @@ namespace producer.Controllers
 
             Console.WriteLine(factory.HostName + ":" + factory.Port);
 
-            //var token = GetToken();
+            var token = GetToken();
 
-            //if (string.IsNullOrWhiteSpace(token))
-            //{
-            //    return Unauthorized();
-            //}
+            if (string.IsNullOrWhiteSpace(token))
+            {
+                return Unauthorized();
+            }
 
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())

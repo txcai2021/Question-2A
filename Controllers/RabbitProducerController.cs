@@ -49,8 +49,7 @@ namespace producer.Controllers
                                      autoDelete: false,
                                      arguments: null);
 
-                string message = task.email;
-          
+               
                 var body = Encoding.Default.GetBytes(Newtonsoft.Json.JsonConvert.SerializeObject(task));              
 
                 channel.BasicPublish(exchange: "",
